@@ -1,0 +1,13 @@
+
+        <br><br><br><br><br>
+        <hr>
+        <h5>대표: <%= @board.boardUser %></h5>
+        <h5>설명: </h5>
+        <%= @board.boardContent %>
+        <hr>
+        
+        <h5>대표 이미지</h5>
+        <%= image_tag @board.board_image_url.url , :style => "width: 300px; height: 300px"%>
+    
+        <br>
+        <hr>

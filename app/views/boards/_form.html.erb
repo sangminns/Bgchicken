@@ -1,0 +1,16 @@
+<%= form_for(@board, :html => { :multipart => true }) do |f| %>
+    
+    
+    <br>
+    사진 등록
+    <!--<input type="file" accept="image/*">-->
+    <%= f.file_field :board_image_url , accept: "image/*" %>
+    <br>
+    
+     1등 소감! :
+    <%= f.text_area :boardContent, :rows => 3, :cols => 50 %>
+
+    <br>
+
+    <%= f.submit '사진 추가', class: "btn btn-success" %>
+<% end %>

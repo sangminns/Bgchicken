@@ -1,0 +1,130 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
+// @import url(https://fonts.googleapis.com/earlyaccess/hanna.css);
+@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+
+
+// .navbar-default {
+//     font-family: 'Concert One' , cursive;
+//     background-color: transparent;
+//     border: transparent;
+//     color: white;
+
+// }
+
+// .navbar-default .navbar-brand {
+//   color: #00bcf2;
+// }
+
+// .navbar-default .navbar-header .navbar-brand:hover,
+// .navbar-default .navbar-header .navbar-brand:focus {
+//     // color: white;
+//     color: #006bf7;
+//   }
+
+// .navbar-default .navbar-nav > li > a {
+//     background-color: transparent;
+//     color: #00bcf2;
+// }
+
+// .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle {
+//     color: #00bcf2;
+// }
+
+// .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+//     color: #006bf7;
+// }
+
+// .navbar-default .nav > li > a,
+// .navbar-default .nav > li > a:focus {
+//     // color: rgba(255, 255, 255, 0.5);
+//     color: #00bcf2;
+// }
+
+// .navbar-default .nav > li > a:hover,
+// .navbar-default .nav > li > a:focus:hover {
+//     // color: white;
+//     color: #006bf7;
+// }
+  
+// .navbar-default.affix {
+//     background-color: #fff;
+//     border-color: rgba(34, 34, 34, 0.1);
+// }
+  
+// .navbar-default.affix .navbar-header .navbar-brand {
+//     color: #00bcf2;
+// }
+
+// .navbar-default.affix .navbar-header .navbar-brand:hover,
+// .navbar-default.affix .navbar-header .navbar-brand:focus {
+//     color: #006bf7;
+// }
+
+// .navbar-default.affix .navbar-toggle, .navbar-default.affix .navbar-toggle:hover{
+//     color: #00bcf2 ;
+// }
+
+
+
+// .navbar-default.affix .nav > li > a,
+// .navbar-default.affix .nav > li > a:focus {
+//     // color: rgba(255, 255, 255, 0.5);
+//     color: #00bcf2;
+// }
+
+// .navbar-default .nav > li > a:hover,
+// .navbar-default .nav > li > a:focus:hover {
+//     // color: white;
+//     color: #006bf7;
+// }
+// // ---
+// @media (min-width: 768px) {
+//   .navbar-default {
+//     background-color: transparent;
+//     border-color: transparent;
+//   }
+//   .navbar-default .navbar-header .navbar-brand {
+//     // color: rgba(255, 255, 255, 0.8);
+//     color: #00bcf2;
+//   }
+//   .navbar-default .navbar-header .navbar-brand:hover,
+//   .navbar-default .navbar-header .navbar-brand:focus {
+//     // color: white;
+//     color: #006bf7;
+//   }
+//   .navbar-default .nav > li > a,
+//   .navbar-default .nav > li > a:focus {
+//     // color: rgba(255, 255, 255, 0.5);
+//     color: #00bcf2;
+//   }
+//   .navbar-default .nav > li > a:hover,
+//   .navbar-default .nav > li > a:focus:hover {
+//     // color: white;
+//     color: #006bf7;
+//   }
+//   .navbar-default.affix {
+//     background-color: #fff;
+//     border-color: rgba(34, 34, 34, 0.1);
+//   }
+//   .navbar-default.affix .navbar-header .navbar-brand {
+//     color: #00bcf2;
+//   }
+//   .navbar-default.affix .navbar-header .navbar-brand:hover,
+//   .navbar-default.affix .navbar-header .navbar-brand:focus {
+//     color: #006bf7;
+//   }
+//   .navbar-default.affix .nav > li > a,
+//   .navbar-default.affix .nav > li > a:focus {
+//     color: #00bcf2;
+//   }
+//   .navbar-default.affix .nav > li > a:hover,
+//   .navbar-default.affix .nav > li > a:focus:hover {
+//     color: #006bf7;
+//   }
+// }
