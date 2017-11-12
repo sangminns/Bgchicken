@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   
   resources :boards
 
+  get '/my_page/:id' => 'my_page#show', as: "my_page"
+  
   root 'home#index'
   
   get 'home/index'

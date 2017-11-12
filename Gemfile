@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+#  page
+gem 'kaminari'
+
 # carrierwave 이미지 첨부 gem
 gem 'carrierwave'
 gem 'fog-aws'
