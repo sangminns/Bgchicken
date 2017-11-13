@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-  before_action :is_user?, only: [:show, :new]
+  before_action :authenticate_user!, except: [:show, :index]
   load_and_authorize_resource
   
   
@@ -36,8 +36,10 @@ class BoardsController < ApplicationController
       params.require(:board).permit(:boardCategory, :boardContent, :board_image_url)
   end
   
-  def is_user?
-    redirect_to new_user_session_path unless current_user == true
-  end
+  # def is_user?
+  #   unless current_user == true
+  #     redirect_to new_user_session_path
+  #   end
+  # end
   
 end
