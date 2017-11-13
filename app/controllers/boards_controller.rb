@@ -23,11 +23,12 @@ class BoardsController < ApplicationController
       @makeBoard.boardUser = current_user.email
       @makeBoard.boardUserBGID = current_user.bgid
       @makeBoard.boardCategory = params[:board]["boardCategory"]
+      @makeBoard.board_create_time = Time.now.to_i
       @makeBoard.save
     end
 
     redirect_to '/boards' #method는 자동으로 get
-    
+
   end
   
   private

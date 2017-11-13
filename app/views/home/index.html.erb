@@ -7,7 +7,7 @@
     <div style="position: absolute; bottom: 30px; left: 25%; width: 50%; text-align: center;">
             
         <div class="over_slideshow" style="color: white">
-            <h1> Do not hesitate. Act now! </h1>
+            <h1> 사진올리고 진짜 치킨 먹자~! </h1>
             <br><br>
             <p>광고문의 .</p> 
         </div>
@@ -18,6 +18,14 @@
 <section id="service_introduce">
     <!-- 추첨에 사용되는 코드 -->
     <!-- 글 올리는 방법 -->
+    <div class="container">
+        <hr>
+        당첨자 3명의 배그 ID
+        <hr>
+        <% @random.each do |a|%>
+            <%= a.boardUserBGID %>
+        <% end %>
+    </div>
       <!--  파일 및 카메라 인풋 코드 <input type="file" accept="image/*">  -->
     <!-- 어떤 서비스를 하는 페이지인지? -->
 </section>

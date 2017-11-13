@@ -8,7 +8,8 @@ class CreateBoards < ActiveRecord::Migration
       
       t.string :boardCategory
       t.text :boardContent
-      t.string :board_image_url 
+      t.string :board_image_url
+      t.integer :board_create_time
       
       t.timestamps null: false
     end

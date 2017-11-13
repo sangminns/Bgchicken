@@ -20,8 +20,9 @@ ActiveRecord::Schema.define(version: 20171113050036) do
     t.string   "boardCategory"
     t.text     "boardContent"
     t.string   "board_image_url"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.integer  "board_create_time"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "roles", force: :cascade do |t|
