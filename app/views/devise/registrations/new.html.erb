@@ -2,7 +2,7 @@
   <div class="panel panel-default devise-bs">
     <div class="panel-heading">
       <p style="font-size:3rem; ">
-        배그 치킨 Sign up
+        Sign up
       </p>
       <h4><%#= t('.sign_up', default: 'Sign up') %></h4>
     </div>
@@ -10,11 +10,11 @@
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
         <div class="form-group">
-          <%= f.label :email , style: 'color: #a3a3a3; font-size: 2rem'%>
+          <%= f.label :email , style: 'color: #a3a3a3; font-size: 2rem'%> <p style="color: red">(당첨시 연락받으실 메일입니다!)</p>
           <%= f.email_field :email, required: true, autofocus: true, class: 'form-control'%>
         </div>
         <div class="form-group">
-          <%= f.label '배그 ID' , style: 'color: #a3a3a3; font-size: 2rem'%>
+          <%= f.label '배그 ID' , style: 'color: #a3a3a3; font-size: 2rem'%> <p style="color: red">(앞으로 등록하실 사진의 배그ID와 동일해야합니다!)</p>
           <%= f.text_field :bgid, required: true , class: 'form-control'%>
         </div>
         <div class="form-group">

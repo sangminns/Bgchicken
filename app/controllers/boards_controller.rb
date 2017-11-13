@@ -1,5 +1,7 @@
 class BoardsController < ApplicationController
+  before_action :is_user?, only: [:show, :new]
   load_and_authorize_resource
+  
   
   def index
     @boards = Board.order(created_at: :DESC).page(params[:page]).per(6)
@@ -33,4 +35,9 @@ class BoardsController < ApplicationController
   def board_params
       params.require(:board).permit(:boardCategory, :boardContent, :board_image_url)
   end
+  
+  def is_user?
+    redirect_to new_user_session_path unless current_user == true
+  end
+  
 end
