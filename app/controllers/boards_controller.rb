@@ -1,4 +1,6 @@
 class BoardsController < ApplicationController
+  load_and_authorize_resource
+  
   def index
     @boards = Board.order(created_at: :DESC).page(params[:page]).per(6)
   end
@@ -17,7 +19,7 @@ class BoardsController < ApplicationController
       @makeBoard = Board.new(board_params)
       @makeBoard.user_id = current_user.id
       @makeBoard.boardUser = current_user.email
-      @makeBoard.boardUserBGID = "test"
+      @makeBoard.boardUserBGID = current_user.bgid
       @makeBoard.boardCategory = params[:board]["boardCategory"]
       @makeBoard.save
     end

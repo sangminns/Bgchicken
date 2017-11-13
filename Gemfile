@@ -13,6 +13,8 @@ gem 'rails_db'
 
 # 로그인 기능
 gem 'devise'
+gem 'cancancan'
+gem 'rolify'
 
 # bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'

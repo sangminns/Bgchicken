@@ -1,6 +1,8 @@
 class Board < ActiveRecord::Base
      
-     has_many :users
+     resourcify
+     
+     belongs_to :users
      
      mount_uploader :board_image_url, UpboardUploader
 

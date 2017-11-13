@@ -34,7 +34,7 @@
 
     <br><br>
 
-    <%= f.submit '저장하기', class: "custom-btn", :confirm => "저장을 누르시면 삭제를 하실 수 없습니다." %>
+    <%= f.submit '저장하기', class: "custom-btn", data: { confirm: '공정성을 위해 저장하시면 삭제가 불가능하니 다시 한 번 확인 부탁드립니다.' } %>
 <% end %>
 
 
