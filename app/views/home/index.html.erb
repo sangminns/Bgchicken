@@ -20,10 +20,9 @@
     <!-- 글 올리는 방법 -->
     <div class="container">
         <hr>
-        당첨자 3명의 배그 ID
-        <hr>
+        이번주 당첨자 BGID<br>
         <% @random.each do |a|%>
-            <%= a.boardUserBGID %>
+            당첨자 : <%= a.boardUserBGID %> <br> 
         <% end %>
     </div>
       <!--  파일 및 카메라 인풋 코드 <input type="file" accept="image/*">  -->
