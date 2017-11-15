@@ -5,5 +5,7 @@ class Board < ActiveRecord::Base
      belongs_to :users
      
      mount_uploader :board_image_url, UpboardUploader
+     
+     validates :board_image_url, presence: true
 
 end

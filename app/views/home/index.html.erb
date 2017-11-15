@@ -101,3 +101,36 @@
         
     </div>
 </section>
+
+<script>
+    
+// scroll 이동코드
+$(document).ready(function(){
+    	$('a[href^="/#"]').on('click',function (e) {
+    	    e.preventDefault();
+    	    
+    	    var target = this.hash;
+    	    var $target = $(target);
+    
+    	    $('html, body').stop().animate({
+    	        scrollTop: $target.offset().top - 70 
+    	    }, 700);
+    	});
+    });
+ 
+    $(window).scroll(function() {
+      $(".scroll").css( "display", "inline");
+    });
+    $(".scroll").click(function() {
+        $('html,body').animate({
+            scrollTop: 0 }, 700);
+    });
+
+// $(document).ready(function (){
+//     $("").click(function (){
+//         $('html, body').animate({
+//             scrollTop: $("#service_introduce3").offset().top
+//         }, 2000);
+//     });
+// });
+</script>

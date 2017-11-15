@@ -24,10 +24,18 @@ class BoardsController < ApplicationController
       @makeBoard.boardUserBGID = current_user.bgid
       @makeBoard.boardCategory = params[:board]["boardCategory"]
       @makeBoard.board_create_time = Time.now.to_i
-      @makeBoard.save
+      
+      if @makeBoard.save
+        # flash[:success] = "성공적으로 저장되셨습니다."
+        redirect_to '/boards'
+      else
+        flash[:error] = "사진이 업로드 되지 않으셨습니다. 사진을 다시 올려주세요."
+        redirect_to '/boards/new'
+      end
+      
     end
 
-    redirect_to '/boards' #method는 자동으로 get
+    # redirect_to '/boards' #method는 자동으로 get
 
   end
   
