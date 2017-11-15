@@ -7,21 +7,21 @@
         <%= link_to '정보 수정하기', edit_user_registration_path , :style => 'float: right; font-size: 1.3em;'%> 
         <h3><%= @user.email %></h3><br>
         
-        <section style="height: 250px">
+        <section>
         <h4>Solo 사진</h4>
             <% @user.boards.where(:boardCategory => 'Solo').each do |a| %>
                 <%= image_tag a.board_image_url , :style => "width: 200px; height: 200px" %>
             <% end %>
         </section>
         
-        <section style="height: 250px">
+        <section>
         <h4>Duo 사진</h4>
             <% @user.boards.where(:boardCategory => 'Duo').each do |a| %>
                 <%= image_tag a.board_image_url , :style => "width: 200px; height: 200px" %>
             <% end %>
         </section>
         
-        <section style="height: 250px">
+        <section>
         <h4>Squad 사진</h4>
             <% @user.boards.where(:boardCategory => 'Squad').each do |a| %>
                 <%= image_tag a.board_image_url , :style => "width: 200px; height: 200px"%>
