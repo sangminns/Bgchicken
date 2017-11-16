@@ -4,8 +4,8 @@ class BoardsController < ApplicationController
   
   
   def index
-    @boards = Board.where(:board_private == false)
-    # .order(created_at: :DESC).page(params[:page]).per(6)
+    @boards = Board.where(board_private: false).order(created_at: :DESC).page(params[:page]).per(6)
+    
     # .where(board_private: :false)
     
     # GroupUser.where(GroupUser.arel_table[:user_id].not_eq(me))

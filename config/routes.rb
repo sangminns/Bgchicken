@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   get '/my_page/:id' => 'my_page#show', as: "my_page"
   
-  post 'boards/private/:id' => 'boards#save_private'
+  get '/my_page/show/:id' => "board#show"
+  
+  post '/boards/private/:id' => 'boards#save_private'
   
   root 'home#index'
   

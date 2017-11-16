@@ -13,7 +13,7 @@
                         <h4>시간 : <%= Time.at(@board.board_create_time + (3600*9)) %></h4>
                         <br>
                         <h5>현재상태 : 
-                                <% if @board.board_private == 'true' %>
+                                <% if @board.board_private == true %>
                                         비공개
                                 <% else %>
                                         공개
@@ -22,11 +22,16 @@
                         
                         <%if @board.user_id == current_user.id %>
                                 <%= form_tag("/boards/private/#{@board.id}", method: 'post') do %>        
+                                        <br>
+                                        <span style="margin: auto">공개</span>
                                         <label class="switch">
-                                          <input type="checkbox" name="private_value" checked_value=true unchecked_value=false >
+                                          <input type="hidden" name="private_value" value=false />
+                                          <input type="checkbox" name="private_value" value=true />
                                           <span class="slider round"></span>
-                                        </label><br>
-                                        <%= submit_tag('비공개하기') %>
+                                        </label>
+                                        <span style="margin-bottom: 5px">비공개</span>
+                                        <br>
+                                        <%= submit_tag '저장' %>
                                 <% end %>
                         <% end %>
                         <br>
