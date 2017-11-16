@@ -4,7 +4,11 @@ class BoardsController < ApplicationController
   
   
   def index
-    @boards = Board.order(created_at: :DESC).page(params[:page]).per(6)
+    @boards = Board.where(:board_private == false)
+    # .order(created_at: :DESC).page(params[:page]).per(6)
+    # .where(board_private: :false)
+    
+    # GroupUser.where(GroupUser.arel_table[:user_id].not_eq(me))
   end
 
   def new
@@ -24,19 +28,30 @@ class BoardsController < ApplicationController
       @makeBoard.boardUserBGID = current_user.bgid
       @makeBoard.boardCategory = params[:board]["boardCategory"]
       @makeBoard.board_create_time = Time.now.to_i
-      
-      if @makeBoard.save
+      @makeBoard.board_private = false
+      @makeBoard.save
+      # if @makeBoard.save
         # flash[:success] = "성공적으로 저장되셨습니다."
         redirect_to '/boards'
-      else
-        flash[:error] = "사진이 업로드 되지 않으셨습니다. 사진을 다시 올려주세요."
-        redirect_to '/boards/new'
-      end
+      # else
+      #   flash[:error] = "사진이 업로드 되지 않으셨습니다. 사진을 다시 올려주세요."
+      #   redirect_to '/boards/new'
+      # end
       
     end
 
     # redirect_to '/boards' #method는 자동으로 get
 
+  end
+  
+  def save_private
+    @makeBoard2 = Board.find(params[:id])
+    @makeBoard2.board_private = params[:private_value]
+    @makeBoard2.save
+    
+    redirect_to '/boards'
+    
+    authorize! :save_private, @makeBoard2
   end
   
   private

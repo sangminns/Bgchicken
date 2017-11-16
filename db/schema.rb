@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20171113050036) do
     t.text     "boardContent"
     t.string   "board_image_url"
     t.integer  "board_create_time"
+    t.boolean  "board_private"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end

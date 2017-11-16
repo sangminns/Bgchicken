@@ -10,6 +10,7 @@ class CreateBoards < ActiveRecord::Migration
       t.text :boardContent
       t.string :board_image_url
       t.integer :board_create_time
+      t.boolean :board_private
       
       t.timestamps null: false
     end

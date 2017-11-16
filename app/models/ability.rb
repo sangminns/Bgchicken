@@ -11,7 +11,7 @@ class Ability
       can [:read, :create, :update, :destroy], :all
       
     elsif user
-      can [:read, :create], [Board]
+      can [:read, :create, :save_private], [Board]
     end
     #   user ||= User.new # guest user (not logged in)
     #   if user.admin?
