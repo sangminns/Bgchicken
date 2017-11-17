@@ -9,22 +9,25 @@
         
         <section>
         <h4 style="text-align: center">| Solo 사진 |</h4>
+        <br>    
             <% @user.boards.where(:boardCategory => 'Solo').each do |a| %>
-                <%= link_to image_tag(a.board_image_url, :style => "width: 300px; height: 300px" ), board_path(a.id)%>
+                <%= link_to image_tag(a.board_image_url, :style => "width: 250px; height: 250px" ), board_path(a.id)%>
             <% end %>
         </section>
         
         <section>
         <h4 style="text-align: center">| Duo 사진 |</h4>
+        <br>
             <% @user.boards.where(:boardCategory => 'Duo').each do |a| %>
-                <%= link_to image_tag(a.board_image_url, :style => "width: 300px; height: 300px" ), board_path(a.id)%>
+                <%= link_to image_tag(a.board_image_url, :style => "width: 250px; height: 250px" ), board_path(a.id)%>
             <% end %>
         </section>
         
         <section>
         <h4 style="text-align: center">| Squad 사진 |</h4>
+        <br>
             <% @user.boards.where(:boardCategory => 'Squad').each do |a| %>
-                <%= link_to image_tag(a.board_image_url, :style => "width: 300px; height: 300px" ), board_path(a.id)%>
+                <%= link_to image_tag(a.board_image_url, :style => "width: 250px; height: 250px" ), board_path(a.id)%>
             <% end %>
         <section>
             
