@@ -73,6 +73,8 @@ GEM
     excon (0.59.0)
     execjs (2.7.0)
     ffi (1.9.18)
+    figaro (1.1.1)
+      thor (~> 0.14)
     fog-aws (1.4.1)
       fog-core (~> 1.38)
       fog-json (~> 1.0)
@@ -124,6 +126,7 @@ GEM
     mini_portile2 (2.2.0)
     minitest (5.10.3)
     multi_json (1.12.1)
+    mysql2 (0.4.10)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
     orm_adapter (0.5.0)
@@ -236,11 +239,13 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.1.0)
   devise
+  figaro
   fog-aws
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
   mini_magick
+  mysql2
   rails (= 4.2.5)
   rails_db
   rolify

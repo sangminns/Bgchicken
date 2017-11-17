@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'figaro'
+
 #  page
 gem 'kaminari'
 
@@ -64,3 +66,6 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+  gem 'mysql2'
+end
