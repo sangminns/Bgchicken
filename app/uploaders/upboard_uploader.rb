@@ -24,7 +24,7 @@ class UpboardUploader < CarrierWave::Uploader::Base
   process resize_to_fit: [800, 800]
   
   version :thumb do
-    process resize_to_fit: [200, 200]
+    process resize_to_fit: [300, 300]
   end
   # Process files as they are uploaded:
   # process scale: [200, 300]

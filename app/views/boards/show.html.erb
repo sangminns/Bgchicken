@@ -19,24 +19,23 @@
                                         공개
                                 <% end %>
                         </h5>
-                        
-                        <%if @board.user_id == current_user.id %>
-                                <%= form_tag("/boards/private/#{@board.id}", method: 'post') do %>        
-                                        <br>
-                                        <span style="margin: auto">공개</span>
-                                        <label class="switch">
-                                          <input type="hidden" name="private_value" value=false />
-                                          <input type="checkbox" name="private_value" value=true />
-                                          <span class="slider round"></span>
-                                        </label>
-                                        <span style="margin-bottom: 5px">비공개</span>
-                                        <br>
-                                        <%= submit_tag '저장' %>
+                        <% if current_user != nil %>
+                                <% if @board.user_id == current_user.id %>
+                                        <%= form_tag("/boards/private/#{@board.id}", method: 'post') do %>        
+                                                <br>
+                                                <span style="margin: auto">공개</span>
+                                                <label class="switch">
+                                                  <input type="hidden" name="private_value" value=false />
+                                                  <input type="checkbox" name="private_value" value=true />
+                                                  <span class="slider round"></span>
+                                                </label>
+                                                <span style="margin-bottom: 5px">비공개</span>
+                                                &nbsp;&nbsp;
+                                                <input class="btn" type="submit" value="저장">
+                                                <%#= submit_tag '저장' %>
+                                        <% end %>
                                 <% end %>
                         <% end %>
-                        <br>
-                        <hr>
-                        
                 </div>
         </div>
         

@@ -3,19 +3,19 @@
 <h1>사진 구경 <button class="custom-btn2"><a href="/boards/new">사진 등록</a></button></h1>
 
 <br>
-
-<% @boards.each do |a| %>
-  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-    <div class="card">
-      <img class="clubpart-image" src="<%= image_url a.board_image_url.url %>" alt="Image" >
-      <a href="<%= board_path(a.id) %>">
-      <div class="card-img-overlay card-img-back">
-          <h4 class="card-title-back"><%= a.boardContent %></h4>
+<div class="row">
+  <% @boards.each do |a| %>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <div class="card">
+        <img class="clubpart-image" src="<%= image_url a.board_image_url.url %>" alt="Image" >
+        <a href="<%= board_path(a.id) %>">
+        <div class="card-img-overlay card-img-back">
+            <h4 class="card-title-back"><%= a.boardContent %></h4>
+        </div>
+        </a>
       </div>
-      </a>
-    </div>
-  </div>     
-<% end %>
-                
+    </div>    
+  <% end %>
+</div>           
 
   <%#= paginate @boards %>

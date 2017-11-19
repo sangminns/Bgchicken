@@ -10,26 +10,61 @@
         <section>
         <h4 style="text-align: center">| Solo 사진 |</h4>
         <br>    
-            <% @user.boards.where(:boardCategory => 'Solo').each do |a| %>
-                <%= link_to image_tag(a.board_image_url.thumb.url, :style => "width: 250px; height: 250px" ), board_path(a.id)%>
-            <% end %>
+            <div class="row">
+                <% @user.boards.where(:boardCategory => 'Solo').each do |a| %>
+                    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                        <div class="card">
+                            <img class="clubpart-image" src="<%= image_url a.board_image_url.thumb.url %>" alt="">
+                              <a href="<%= board_path(a.id) %>">
+                                  <div class="card-img-overlay card-img-back">
+                                      <h4 class="card-title-back"><%= a.boardContent %></h4>
+                                  </div>
+                              </a>
+                        </div>
+                    </div>
+                <% end %>
+            </div>    
         </section>
+        <hr>
         
         <section>
         <h4 style="text-align: center">| Duo 사진 |</h4>
         <br>
-            <% @user.boards.where(:boardCategory => 'Duo').each do |a| %>
-                <%= link_to image_tag(a.board_image_url.thumb.url, :style => "width: 250px; height: 250px" ), board_path(a.id)%>
-            <% end %>
+            <div class="row">
+                <% @user.boards.where(:boardCategory => 'Duo').each do |a| %>
+                    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                        <div class="card">
+                            <img class="clubpart-image" src="<%= image_url a.board_image_url.thumb.url %>" alt="">
+                              <a href="<%= board_path(a.id) %>">
+                                  <div class="card-img-overlay card-img-back">
+                                      <h4 class="card-title-back"><%= a.boardContent %></h4>
+                                  </div>
+                              </a>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
         </section>
         
+        <hr>
         <section>
         <h4 style="text-align: center">| Squad 사진 |</h4>
         <br>
-            <% @user.boards.where(:boardCategory => 'Squad').each do |a| %>
-                <%= link_to image_tag(a.board_image_url.thumb.url, :style => "width: 250px; height: 250px" ), board_path(a.id)%>
-            <% end %>
-        <section>
+            <div class="row">
+                <% @user.boards.where(:boardCategory => 'Squad').each do |a| %>
+                    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                        <div class="card">
+                            <img class="clubpart-image" src="<%= image_url a.board_image_url.thumb.url %>" alt="">
+                              <a href="<%= board_path(a.id) %>">
+                                  <div class="card-img-overlay card-img-back">
+                                      <h4 class="card-title-back"><%= a.boardContent %></h4>
+                                  </div>
+                              </a>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </section>
             
         <br><br><br><br><br>
         <hr>
