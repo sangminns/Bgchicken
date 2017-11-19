@@ -1,27 +1,67 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
-
-    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
-    <%= f.input :password_confirmation, required: false %>
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+<div class="container" style="max-width: 500px; padding-top: 100px">
+  <div class="panel panel-default devise-bs">
+    <div class="panel-heading">
+      <p style="font-size:3rem; ">
+        Edit <%= resource_name.to_s.humanize %>
+      </p>
+    </div>
+    <div class="panel-body">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= f.error_notification %>
+      
+        <div class="form-inputs">
+          <div class="form-group">
+            *&nbsp;<%= f.label :email , style: 'color: #a3a3a3; font-size: 2rem'%>
+            <%= f.email_field :email, required: true, autofocus: true, class: 'form-control'%>
+          </div>
+          
+          <div class="form-group">
+          <%= f.label '배그 ID' , style: 'color: #a3a3a3; font-size: 2rem'%> <p style="color: red">(배그ID는 수정이 불가능합니다!)</p>
+          <%= f.text_field :bgid, disabled: true ,class: 'form-control'%>
+          </div>
+          
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+          <% end %>
+          
+          <div class="form-group">
+            <%= f.label :password , style: 'color: #a3a3a3; font-size: 2rem'%>
+            <%= f.password_field :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false , class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :password_confirmation , style: 'color: #a3a3a3; font-size: 2rem'%>
+            <%= f.password_field :password_confirmation, required: false , class: 'form-control'%>
+          </div>
+          <div class="form-group">
+            *&nbsp;<%= f.label :current_password , style: 'color: #a3a3a3; font-size: 2rem'%>
+            <%= f.password_field :current_password, hint: "we need your current password to confirm your changes", required: true , class: 'form-control'%>
+          </div>
+            
+          
+          <!--이전 devise 정보들-->
+          <%#= f.input :email, required: true, autofocus: true %>
+      
+          <%# if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <!--<p>Currently waiting confirmation for: <%#= resource.unconfirmed_email %></p>-->
+          <%# end %>
+      
+          <%#= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+          <%#= f.input :password_confirmation, required: false %>
+          <%#= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+        
+        
+        </div>
+      
+        <div class="form-actions">
+          <%= f.button :submit, "Update" %>
+        </div>
+      <% end %>
+      
+      <h3>Cancel my account</h3>
+      
+      <p>계정삭제하시려구요?<br>(삭제 후 배그ID기록이 남아 같은 배그ID를 활용하여 회원가입하실 수 없습니다.)<br><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+      <hr>
+      <%= link_to "Back", :back %>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>
