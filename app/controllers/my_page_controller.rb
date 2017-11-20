@@ -5,6 +5,9 @@ class MyPageController < ApplicationController
         @user = User.find(params[:id])
     end
     
+    def term
+    end
+    
     
     private 
     

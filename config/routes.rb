@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   
   get '/my_page/show/:id' => "board#show"
   
+  get '/terms' => "my_page#term"
+  
   post '/boards/private/:id' => 'boards#save_private'
   
   root 'home#index'
